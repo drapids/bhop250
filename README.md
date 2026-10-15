@@ -1,5 +1,7 @@
 # BHOP250
 
+Officially publishd to modrinth! https://modrinth.com/mod/bhop250
+
 Source-engine movement for Minecraft (Fabric). It brings over SurfsUp / CS:GO style **air-strafing**, **perfect bunny hops** that keep your momentum, and a minimal **colour-coded speedometer** in units per second.
 
 It's built for fun rather than for CS 1.6 accuracy. Normal movement is 250–325 UPS, and with clean strafing you can chain past **2000 UPS** (about 34.5 blocks/s).
