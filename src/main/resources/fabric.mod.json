@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "bhop250",
+	"version": "${version}",
+	"name": "BHOP250",
+	"description": "Source-engine movement for Minecraft: SurfsUp / CS:GO style air-strafing, perfect bunny hops that keep your momentum, and a colour-coded units-per-second speedometer.",
+	"authors": [
+		"drapids"
+	],
+	"contact": {
+		"sources": "https://github.com/drapids/bhop250",
+		"issues": "https://github.com/drapids/bhop250/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/bhop250/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.bhop250.Bhop250Client"
+		],
+		"modmenu": [
+			"com.bhop250.compat.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"bhop250.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"cloth-config": "*",
+		"modmenu": "*"
+	}
+}
