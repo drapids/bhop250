@@ -7,7 +7,7 @@ public final class SpeedTracker {
 
 	private static final double TREND_SMOOTHING = 0.5;
 	static final int HOLD_TICKS = 6;
-	private static final float FADE_PER_TICK = 0.34F;
+	private static final float FADE_PER_TICK = 0.5F;
 
 	private boolean primed;
 	private double speed;
@@ -42,6 +42,9 @@ public final class SpeedTracker {
 			this.state = 0;
 		}
 
+		if (this.state != 0 && Math.signum(this.blend) == -this.state) {
+			this.blend = 0.0F;
+		}
 		this.blend = approach(this.blend, this.state, FADE_PER_TICK);
 	}
 

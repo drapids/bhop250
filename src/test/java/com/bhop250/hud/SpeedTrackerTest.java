@@ -55,6 +55,16 @@ class SpeedTrackerTest {
 	}
 
 	@Test
+	void hardLandingTurnsRedBeforeDroppingToBaseline() {
+		SpeedTracker tracker = new SpeedTracker();
+		feed(tracker, 900.0, 3.0, 10);
+		tracker.update(700.0, BASELINE, SENSITIVITY);
+		tracker.update(520.0, BASELINE, SENSITIVITY);
+		assertEquals(-1, tracker.state());
+		assertEquals(SpeedTracker.RED, tracker.color());
+	}
+
+	@Test
 	void colourLerpHitsEndpoints() {
 		assertEquals(SpeedTracker.WHITE, SpeedTracker.lerpColor(SpeedTracker.WHITE, SpeedTracker.RED, 0.0F));
 		assertEquals(SpeedTracker.RED, SpeedTracker.lerpColor(SpeedTracker.WHITE, SpeedTracker.RED, 1.0F));
